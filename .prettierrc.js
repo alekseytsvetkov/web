@@ -1,4 +1,3 @@
-//module.exports = require('@mantine/eslint-config/prettier.config');
 module.exports = {
     semi: true,
     printWidth: 120,
