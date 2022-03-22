@@ -1,10 +1,8 @@
-import Link from 'next/link';
 import {useRouter} from 'next/router';
-
-import {useTranslation} from 'next-i18next';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
+import {useTranslation} from 'next-i18next';
+import {Text} from '@mantine/core';
 
-import {Text, Button} from '@mantine/core';
 import {ColorSchemeToggle} from '../components/ColorSchemeToggle';
 
 export default function HomePage() {
@@ -21,11 +19,6 @@ export default function HomePage() {
                 mt="xl">
                 {t('utils.login')}
             </Text>
-            <Link href="/" locale={router.locale === 'en' ? 'ru' : 'en'}>
-                <Button color="gray" radius="md" size="md">
-                    {t('change')}
-                </Button>
-            </Link>
             <ColorSchemeToggle />
         </>
     );
