@@ -1,10 +1,11 @@
-import {GetServerSidePropsContext} from 'next';
 import {useState} from 'react';
-import {AppProps} from 'next/app';
-import {getCookie, setCookies} from 'cookies-next';
+
 import Head from 'next/head';
-import {MantineProvider, ColorScheme, ColorSchemeProvider} from '@mantine/core';
+import {AppProps} from 'next/app';
+import {GetServerSidePropsContext} from 'next';
+import {getCookie, setCookies} from 'cookies-next';
 import {NotificationsProvider} from '@mantine/notifications';
+import {ColorScheme, ColorSchemeProvider, MantineProvider} from '@mantine/core';
 import 'inter-ui/inter.css';
 
 export default function App(props: AppProps & {colorScheme: ColorScheme}) {
