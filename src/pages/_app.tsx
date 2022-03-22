@@ -2,13 +2,13 @@ import {useState} from 'react';
 
 import Head from 'next/head';
 import {AppProps} from 'next/app';
+import {appWithTranslation} from 'next-i18next';
 import {GetServerSidePropsContext} from 'next';
 import {getCookie, setCookies} from 'cookies-next';
-import {NotificationsProvider} from '@mantine/notifications';
 import {ColorScheme, ColorSchemeProvider, MantineProvider} from '@mantine/core';
 import 'inter-ui/inter.css';
 
-export default function App(props: AppProps & {colorScheme: ColorScheme}) {
+function App(props: AppProps & {colorScheme: ColorScheme}) {
     const {Component, pageProps} = props;
     const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme);
 
@@ -31,9 +31,7 @@ export default function App(props: AppProps & {colorScheme: ColorScheme}) {
                     theme={{fontFamily: 'Inter,  sans-serif', colorScheme}}
                     withGlobalStyles
                     withNormalizeCSS>
-                    <NotificationsProvider>
-                        <Component {...pageProps} />
-                    </NotificationsProvider>
+                    <Component {...pageProps} />
                 </MantineProvider>
             </ColorSchemeProvider>
         </>
@@ -43,3 +41,5 @@ export default function App(props: AppProps & {colorScheme: ColorScheme}) {
 App.getInitialProps = ({ctx}: {ctx: GetServerSidePropsContext}) => ({
     colorScheme: getCookie('mantine-color-scheme', ctx) || 'light',
 });
+
+export default appWithTranslation(App);
