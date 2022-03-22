@@ -1,5 +1,6 @@
-import {Title, Text, Anchor} from '@mantine/core';
-import {ColorSchemeToggle} from '../components/ColorSchemeToggle/ColorSchemeToggle';
+import {Text} from '@mantine/core';
+
+import {ColorSchemeToggle} from '../components/ColorSchemeToggle';
 
 export default function HomePage() {
     return (
