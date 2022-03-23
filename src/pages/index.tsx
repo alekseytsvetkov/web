@@ -1,3 +1,5 @@
+import {FC} from 'react';
+
 import {GetStaticProps} from 'next/types';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {useTranslation} from 'next-i18next';
@@ -5,7 +7,7 @@ import {Text} from '@mantine/core';
 
 import {ColorSchemeToggle} from '../components/ColorSchemeToggle';
 
-const HomePage = () => {
+const HomePage: FC = () => {
     const {t} = useTranslation('common');
     return (
         <>

@@ -1,10 +1,12 @@
+import {FC} from 'react';
+
 import {GetStaticPaths, GetStaticProps} from 'next/types';
 import {useRouter} from 'next/router';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {useTranslation} from 'next-i18next';
 import {Text} from '@mantine/core';
 
-const Visited = () => {
+const Visited: FC = () => {
     const router = useRouter();
     const {t} = useTranslation('common');
     const {user} = router.query;
