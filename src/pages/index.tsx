@@ -1,10 +1,11 @@
+import {GetStaticProps} from 'next/types';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {useTranslation} from 'next-i18next';
 import {Text} from '@mantine/core';
 
 import {ColorSchemeToggle} from '../components/ColorSchemeToggle';
 
-export default function HomePage() {
+const HomePage = () => {
     const {t} = useTranslation('common');
     return (
         <>
@@ -38,12 +39,14 @@ export default function HomePage() {
             <ColorSchemeToggle />
         </>
     );
-}
+};
 
-export async function getStaticProps({locale}) {
+export default HomePage;
+
+export const getStaticProps: GetStaticProps = async ({locale}) => {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ['common'])),
+            ...(await serverSideTranslations(locale as string, ['common'])),
         },
     };
-}
+};

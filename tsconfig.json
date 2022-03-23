@@ -22,7 +22,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
+    "**/*.tsx", "src/pages/user/[username].js",
   ],
   "exclude": [
     "node_modules"
