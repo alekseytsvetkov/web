@@ -4,23 +4,35 @@ import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {useTranslation} from 'next-i18next';
 import {Text} from '@mantine/core';
 
-const User = () => {
+const Want = () => {
     const router = useRouter();
     const {t} = useTranslation('common');
+    const {user} = router.query;
     return (
-        <Text
-            color="dimmed"
-            align="center"
-            size="lg"
-            sx={{maxWidth: 580, fontSize: 34, fontWeight: 600}}
-            mx="auto"
-            mt="xl">
-            {t('welcome')} {router.query.username}
-        </Text>
+        <>
+            <Text
+                color="dimmed"
+                align="center"
+                size="lg"
+                sx={{maxWidth: 580, fontSize: 34, fontWeight: 600}}
+                mx="auto"
+                mt="xl">
+                {t('welcome')} {user}
+            </Text>
+            <Text
+                color="dimmed"
+                align="center"
+                size="lg"
+                sx={{maxWidth: 580, fontSize: 34, fontWeight: 600}}
+                mx="auto"
+                mt="xl">
+                This is a {t('want')} page
+            </Text>
+        </>
     );
 };
 
-export default User;
+export default Want;
 
 export const getStaticProps: GetStaticProps = async ({locale}) => {
     return {

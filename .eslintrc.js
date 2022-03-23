@@ -9,6 +9,7 @@ module.exports = {
             jsx: true,
         },
     },
+    ignorePatterns: ['/*.*'],
     settings: {
         react: {
             version: 'detect',
