@@ -9,4 +9,13 @@ module.exports = withBundleAnalyzer({
     eslint: {
         ignoreDuringBuilds: true,
     },
+    async redirects() {
+        return [
+            {
+                source: '/:path',
+                destination: '/:path/want',
+                permanent: true,
+            },
+        ];
+    },
 });
