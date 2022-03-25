@@ -1,7 +1,9 @@
+import React, {FC} from 'react';
+
 import {Moon, Sun1} from 'iconsax-react';
 import {ActionIcon, useMantineColorScheme} from '@mantine/core';
 
-export function ColorSchemeToggle() {
+export const ColorSchemeToggle: FC = () => {
     const {colorScheme, toggleColorScheme} = useMantineColorScheme();
 
     return (
@@ -16,4 +18,4 @@ export function ColorSchemeToggle() {
             {colorScheme === 'dark' ? <Sun1 size={18} variant="Bold" /> : <Moon size={18} variant="Bold" />}
         </ActionIcon>
     );
-}
+};
