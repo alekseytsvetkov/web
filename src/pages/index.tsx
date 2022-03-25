@@ -3,43 +3,16 @@ import {FC} from 'react';
 import {GetStaticProps} from 'next/types';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {useTranslation} from 'next-i18next';
-import {Text} from '@mantine/core';
-
-import {ColorSchemeToggle} from '../components/ColorSchemeToggle';
+import {AppShell, Text} from '@mantine/core';
+import {HeaderHome} from '../components';
 
 const HomePage: FC = () => {
     const {t} = useTranslation('common');
+
     return (
-        <>
-            <Text
-                color="dimmed"
-                align="center"
-                size="lg"
-                sx={{maxWidth: 580, fontSize: 34, fontWeight: 600}}
-                mx="auto"
-                mt="xl">
-                {t('login')}
-            </Text>
-            <Text
-                color="dimmed"
-                align="center"
-                size="lg"
-                sx={{maxWidth: 580, fontSize: 34, fontWeight: 600}}
-                mx="auto"
-                mt="xl">
-                {t('date_of_registration')}
-            </Text>
-            <Text
-                color="dimmed"
-                align="center"
-                size="lg"
-                sx={{maxWidth: 580, fontSize: 34, fontWeight: 600}}
-                mx="auto"
-                mt="xl">
-                {t('contribute')}
-            </Text>
-            <ColorSchemeToggle />
-        </>
+        <AppShell fixed header={<HeaderHome />}>
+            <Text>{t('welcome')}</Text>
+        </AppShell>
     );
 };
 

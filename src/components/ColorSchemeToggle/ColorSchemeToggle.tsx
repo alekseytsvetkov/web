@@ -1,20 +1,21 @@
-import {MoonStars, Sun} from 'tabler-icons-react';
-import {ActionIcon, Group, useMantineColorScheme} from '@mantine/core';
+import React, {FC} from 'react';
 
-export function ColorSchemeToggle() {
+import {Moon, Sun1} from 'iconsax-react';
+import {ActionIcon, useMantineColorScheme} from '@mantine/core';
+
+export const ColorSchemeToggle: FC = () => {
     const {colorScheme, toggleColorScheme} = useMantineColorScheme();
 
     return (
-        <Group position="center" mt="xl">
-            <ActionIcon
-                onClick={() => toggleColorScheme()}
-                size="xl"
-                sx={(theme) => ({
-                    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-                    color: theme.colorScheme === 'dark' ? theme.colors.yellow[4] : theme.colors.blue[6],
-                })}>
-                {colorScheme === 'dark' ? <Sun size={24} /> : <MoonStars size={24} />}
-            </ActionIcon>
-        </Group>
+        <ActionIcon
+            variant="transparent"
+            onClick={() => toggleColorScheme()}
+            sx={(theme) => ({
+                backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.white,
+                color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[9],
+            })}
+            size="lg">
+            {colorScheme === 'dark' ? <Sun1 size={18} variant="Bold" /> : <Moon size={18} variant="Bold" />}
+        </ActionIcon>
     );
-}
+};

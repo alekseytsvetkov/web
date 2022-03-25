@@ -5,12 +5,16 @@ import {AppProps} from 'next/app';
 import {appWithTranslation} from 'next-i18next';
 import {GetServerSidePropsContext} from 'next';
 import {getCookie, setCookies} from 'cookies-next';
+import {useLocalStorage} from '@mantine/hooks';
 import {ColorScheme, ColorSchemeProvider, MantineProvider} from '@mantine/core';
 import 'inter-ui/inter.css';
 
 function App(props: AppProps & {colorScheme: ColorScheme}) {
     const {Component, pageProps} = props;
-    const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme);
+    const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
+        key: 'mantine-color-scheme',
+        defaultValue: 'light',
+    });
 
     const toggleColorScheme = (value?: ColorScheme) => {
         const nextColorScheme = value || (colorScheme === 'dark' ? 'light' : 'dark');
@@ -28,7 +32,10 @@ function App(props: AppProps & {colorScheme: ColorScheme}) {
 
             <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
                 <MantineProvider
-                    theme={{fontFamily: 'Inter,  sans-serif', colorScheme}}
+                    theme={{
+                        fontFamily: 'Inter,  sans-serif',
+                        colorScheme,
+                    }}
                     withGlobalStyles
                     withNormalizeCSS>
                     <Component {...pageProps} />
