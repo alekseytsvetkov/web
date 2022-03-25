@@ -14,6 +14,5 @@ export const useStyles = createStyles(() => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        width: 130,
     },
 }));
