@@ -1,10 +1,9 @@
-import {useState} from 'react';
-
 import Head from 'next/head';
 import {AppProps} from 'next/app';
 import {appWithTranslation} from 'next-i18next';
 import {GetServerSidePropsContext} from 'next';
 import {getCookie, setCookies} from 'cookies-next';
+import {ModalsProvider} from '@mantine/modals';
 import {useLocalStorage} from '@mantine/hooks';
 import {ColorScheme, ColorSchemeProvider, MantineProvider} from '@mantine/core';
 import 'inter-ui/inter.css';
@@ -38,7 +37,9 @@ function App(props: AppProps & {colorScheme: ColorScheme}) {
                     }}
                     withGlobalStyles
                     withNormalizeCSS>
-                    <Component {...pageProps} />
+                    <ModalsProvider>
+                        <Component {...pageProps} />
+                    </ModalsProvider>
                 </MantineProvider>
             </ColorSchemeProvider>
         </>

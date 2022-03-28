@@ -10,7 +10,7 @@ export const useStyles = createStyles(() => ({
     headerLogo: {
         cursor: 'pointer',
     },
-    headerLoginButton: {
+    headerButtons: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
