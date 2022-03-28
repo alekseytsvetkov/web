@@ -16,7 +16,6 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          disable_web_page_preview: true
           format: markdown
           message: |
-            Skeetry Web: [${{ github.actor }}](${{ github.event.actor.url }})) created a new pull request or or updated it [View all PR's](https://github.com/skeetry-app/web/pulls) | event type: ${{ github.event.type }}) | repo url: ${{ github.event.repo.url }})
+            Skeetry Web: ${{ github.actor }} - ${{ github.actor.url }} created a new pull request or or updated it [View all PR's](https://github.com/skeetry-app/web/pulls) | ${{ github.event.type }}) | ${{ github.repository }} | ${{github.sha}} | ${{ github.event.commits[0].message }}
