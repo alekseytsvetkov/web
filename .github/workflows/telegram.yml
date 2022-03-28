@@ -18,4 +18,4 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            A new PR is raised [View all PR's](https://github.com/skeetry-app/mobile/pulls)
+            A new PR is raised [View all PR's](https://github.com/skeetry-app/web/pulls)
