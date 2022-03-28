@@ -2,11 +2,11 @@ import React, {FC} from 'react';
 
 import Link from 'next/link';
 import {useTranslation} from 'next-i18next';
-import {Button, Header, Text} from '@mantine/core';
+import {Header, Text} from '@mantine/core';
 
 import {useStyles} from './styles';
 
-import {ColorSchemeToggle} from '..';
+import {ColorSchemeToggle, LoginButton} from '..';
 
 export const HeaderHome: FC = () => {
     const {t} = useTranslation('common');
@@ -24,22 +24,9 @@ export const HeaderHome: FC = () => {
                         </Text>
                     </div>
                 </Link>
-                <div className={classes.headerLoginButton}>
+                <div className={classes.headerButtons}>
                     <ColorSchemeToggle />
-                    <Button
-                        sx={(theme) => ({
-                            color: theme.colorScheme === 'dark' ? 'black' : 'dark',
-                            backgroundColor: theme.colorScheme === 'dark' ? 'white' : 'dark',
-                            '&:hover': {
-                                backgroundColor:
-                                    theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[9],
-                            },
-                            marginLeft: '10px',
-                        })}
-                        color="dark"
-                        radius={12}>
-                        {t('login')}
-                    </Button>
+                    <LoginButton />
                 </div>
             </div>
         </Header>
