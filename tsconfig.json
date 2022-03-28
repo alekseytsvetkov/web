@@ -1,5 +1,17 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "_mocks": ["__mocks__"],
+      "_components/*": ["src/components/*"],
+      "_core/*": ["src/core/*"],
+      "_constants/*":  ["src/constants/*"],
+      "_i18n/*": ["src/i18n/*"],
+      "_layouts/*": ["src/layouts/*"],
+      "_pages/*": ["src/pages/*"],
+      "_services/*": ["src/services/*"],
+      "_utils/*": ["src/utils/*"],
+    },
     "target": "es5",
     "lib": [
       "dom",
