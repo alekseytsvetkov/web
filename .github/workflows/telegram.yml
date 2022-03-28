@@ -16,6 +16,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
+          disable_web_page_preview: true
           format: markdown
           message: |
-            ${{ github.actor }} created a new pull request [View all PR's](https://github.com/skeetry-app/web/pulls) | IGNORE THIS: JUST SETTING UP A BOT | github.event.name: ${{ github.event.name }} | github.action: ${{ github.action }} | github.event.path: ${{ github.event.path }} 
+            ${{ github.actor }} created a new pull request or or updated it [View all PR's](https://github.com/skeetry-app/web/pulls) | github.event: ${{ github.event }}
