@@ -19,4 +19,4 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            ${{ github.actor }} created a new pull request or or updated it [View all PR's](https://github.com/skeetry-app/web/pulls) | github.event: ${{ github.event }}
+            **Skeetry Web:** ${{ github.actor }} created a new pull request or or updated it **[View all PR's]**(https://github.com/skeetry-app/web/pulls) | github.event: YAML.stringify(${{ github.event }})
