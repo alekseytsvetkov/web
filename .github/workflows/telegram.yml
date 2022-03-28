@@ -18,4 +18,4 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            ${{ github.actor }} created a new pull request [View all PR's](https://github.com/skeetry-app/web/pulls) | IGNORE THIS: JUST SETTING UP A BOT | github.event.name: ${{ github.event.name }} | github.action: ${{ github.action }} | repo.namespace: ${{ repo.namespace }} | github.event.path: ${{ github.event.path }} 
+            ${{ github.actor }} created a new pull request [View all PR's](https://github.com/skeetry-app/web/pulls) | IGNORE THIS: JUST SETTING UP A BOT | github.event.name: ${{ github.event.name }} | github.action: ${{ github.action }} | github.event.path: ${{ github.event.path }} 
