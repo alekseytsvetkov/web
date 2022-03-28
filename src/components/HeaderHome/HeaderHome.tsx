@@ -2,11 +2,11 @@ import React, {FC} from 'react';
 
 import Link from 'next/link';
 import {useTranslation} from 'next-i18next';
+import {LoginButton} from '_components/LoginButton';
+import {ColorSchemeToggle} from '_components/ColorSchemeToggle';
 import {Header, Text} from '@mantine/core';
 
 import {useStyles} from './styles';
-
-import {ColorSchemeToggle, LoginButton} from '..';
 
 export const HeaderHome: FC = () => {
     const {t} = useTranslation('common');
