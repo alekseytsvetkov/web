@@ -4,6 +4,7 @@ import {GetStaticPaths, GetStaticProps} from 'next/types';
 import {useRouter} from 'next/router';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {useTranslation} from 'next-i18next';
+import {MainLayout} from '_layouts/MainLayout';
 import {Text} from '@mantine/core';
 
 const Want: FC = () => {
@@ -11,7 +12,7 @@ const Want: FC = () => {
     const {t} = useTranslation('common');
     const {user} = router.query;
     return (
-        <>
+        <MainLayout>
             <Text
                 color="dimmed"
                 align="center"
@@ -30,7 +31,7 @@ const Want: FC = () => {
                 mt="xl">
                 This is a {t('want')} page
             </Text>
-        </>
+        </MainLayout>
     );
 };
 

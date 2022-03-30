@@ -3,16 +3,16 @@ import {FC} from 'react';
 import {GetStaticProps} from 'next/types';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {useTranslation} from 'next-i18next';
-import {AppShell, Text} from '@mantine/core';
-import {HeaderHome} from '../components';
+import {MainLayout} from '_layouts/MainLayout';
+import {Text} from '@mantine/core';
 
 const HomePage: FC = () => {
     const {t} = useTranslation('common');
 
     return (
-        <AppShell fixed header={<HeaderHome />}>
+        <MainLayout>
             <Text>{t('welcome')}</Text>
-        </AppShell>
+        </MainLayout>
     );
 };
 
