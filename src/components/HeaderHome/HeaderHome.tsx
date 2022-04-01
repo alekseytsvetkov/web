@@ -4,31 +4,34 @@ import Link from 'next/link';
 import {useTranslation} from 'next-i18next';
 import {LoginButton} from '_components/LoginButton';
 import {ColorSchemeToggle} from '_components/ColorSchemeToggle';
-import {Header, Text} from '@mantine/core';
+import {Group, Header, MediaQuery, Text} from '@mantine/core';
 
 import {useStyles} from './styles';
 
 export const HeaderHome: FC = () => {
     const {t} = useTranslation('common');
     const {classes} = useStyles();
+
     return (
-        <Header height={70} p="md">
-            <div className={classes.header}>
+        <Header height={60} p="xs">
+            <Group noWrap align="center" position="apart">
                 <Link href="/" passHref>
-                    <div className={classes.headerLogo}>
-                        <Text sx={() => ({lineHeight: 1})} size="xl" weight={700}>
+                    <Group noWrap direction="column" spacing={1} className={classes.headerLogo}>
+                        <Text inline size="lg" weight={700}>
                             Skeetry
                         </Text>
-                        <Text color="dimmed" size="xs">
-                            {t('description')}
-                        </Text>
-                    </div>
+                        <MediaQuery smallerThan="sm" styles={{display: 'none'}}>
+                            <Text color="dimmed" size="xs">
+                                {t('description')}
+                            </Text>
+                        </MediaQuery>
+                    </Group>
                 </Link>
-                <div className={classes.headerButtons}>
+                <Group noWrap spacing={1}>
                     <ColorSchemeToggle />
                     <LoginButton />
-                </div>
-            </div>
+                </Group>
+            </Group>
         </Header>
     );
 };
