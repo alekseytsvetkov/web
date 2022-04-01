@@ -1,7 +1,7 @@
 import {createStyles} from '@mantine/core';
 
 export const useStyles = createStyles(() => ({
-    headerLogo: {
-        cursor: 'pointer',
+    content: {
+        margin: '0 auto',
     },
 }));
