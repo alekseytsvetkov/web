@@ -21,7 +21,7 @@ export const LoginButton: FC = () => {
                     <Text color="dimmed" size="sm">
                         {t('description')}
                     </Text>
-                    <Link href="/kive" passHref>
+                    <Link href="/username" passHref>
                         <Button
                             component="a"
                             sx={(theme) => ({

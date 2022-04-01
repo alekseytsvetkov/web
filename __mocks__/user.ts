@@ -20,7 +20,7 @@ export const MOCK_USERS = [
     {
         id: '3',
         name: 'Sofia Brown',
-        username: 'sofiab',
+        username: 'username',
         createdAt: new Date().getTime(),
         followersCount: 65,
         followingCount: 131,

@@ -25,6 +25,7 @@ export const Profile: FC<IProps> = ({user}) => {
     const {classes} = useStyles();
     const {name, username, location, createdAt, followingCount, followersCount} = user;
     const currentLocale = i18n.language;
+
     return (
         <Group noWrap direction="column" spacing={5} className={classes.profile}>
             <Group noWrap position="apart" className={classes.profileHeader}>

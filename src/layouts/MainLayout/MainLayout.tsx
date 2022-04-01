@@ -11,6 +11,7 @@ interface IProps {
 
 export const MainLayout: FC<IProps> = ({children}: IProps) => {
     const {classes} = useStyles();
+
     return (
         <AppShell fixed header={<HeaderHome />}>
             <MediaQuery largerThan="md" styles={{width: '40vw'}}>

@@ -6,6 +6,7 @@ import {Menu} from '@mantine/core';
 
 export const ProfileMenu: FC = () => {
     const {t} = useTranslation('common');
+
     return (
         <Menu>
             <Menu.Item icon={<Settings size={14} />}>{t('settings')}</Menu.Item>

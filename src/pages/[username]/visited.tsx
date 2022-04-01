@@ -11,6 +11,7 @@ const Visited: FC = () => {
     const router = useRouter();
     const {t} = useTranslation('common');
     const {user} = router.query;
+
     return (
         <MainLayout>
             <Text

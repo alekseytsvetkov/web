@@ -12,6 +12,7 @@ const Want: FC = () => {
     const router = useRouter();
     const {username} = router.query;
     const user = MOCK_USERS.find((u) => u.username === username);
+
     if (!user) {
         return (
             <MainLayout>
@@ -19,6 +20,7 @@ const Want: FC = () => {
             </MainLayout>
         );
     }
+
     return (
         <MainLayout>
             <Profile user={user} />

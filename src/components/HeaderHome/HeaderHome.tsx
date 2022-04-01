@@ -11,6 +11,7 @@ import {useStyles} from './styles';
 export const HeaderHome: FC = () => {
     const {t} = useTranslation('common');
     const {classes} = useStyles();
+
     return (
         <Header height={60} p="xs">
             <Group noWrap align="center" position="apart">
