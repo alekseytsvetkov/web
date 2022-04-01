@@ -4,7 +4,7 @@ import Link from 'next/link';
 import {useTranslation} from 'next-i18next';
 import {Google} from 'iconsax-react';
 import {useModals} from '@mantine/modals';
-import {Button, Text, Title} from '@mantine/core';
+import {Button, Group, Text, Title} from '@mantine/core';
 
 import {useStyles} from './styles';
 
@@ -16,12 +16,12 @@ export const LoginButton: FC = () => {
         const id = modals.openModal({
             withCloseButton: false,
             children: (
-                <div className={classes.modalMain}>
+                <Group noWrap direction="column" align="center" spacing={5} className={classes.modalMain}>
                     <Title order={2}>{t('welcome_to')} Skeetry</Title>
                     <Text color="dimmed" size="sm">
                         {t('description')}
                     </Text>
-                    <Link href="/user/want" passHref>
+                    <Link href="/kive" passHref>
                         <Button
                             component="a"
                             sx={(theme) => ({
@@ -43,7 +43,7 @@ export const LoginButton: FC = () => {
                             {t('sign_in_with_google')}
                         </Button>
                     </Link>
-                </div>
+                </Group>
             ),
         });
     };

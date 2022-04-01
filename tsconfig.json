@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "_app/*": ["src/*"],
       "_mocks": ["__mocks__"],
       "_components/*": ["src/components/*"],
       "_core/*": ["src/core/*"],

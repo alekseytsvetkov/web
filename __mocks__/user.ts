@@ -1,10 +1,10 @@
-export const MOCK_USER = [
+export const MOCK_USERS = [
     {
         id: '1',
         name: 'Aleksey Tsvetkov',
         username: 'kive',
         location: 'Saint-Petersburg, Russia',
-        createdAt: new Date(),
+        createdAt: new Date().getTime(),
         followersCount: 74,
         followingCount: 28,
     },
@@ -13,8 +13,16 @@ export const MOCK_USER = [
         name: 'Arsenii Ermolaev',
         username: 'earsenii',
         location: 'Yaroslavl, Russia',
-        createdAt: new Date(),
+        createdAt: new Date().getTime(),
         followersCount: 24,
         followingCount: 33,
+    },
+    {
+        id: '3',
+        name: 'Sofia Brown',
+        username: 'sofiab',
+        createdAt: new Date().getTime(),
+        followersCount: 65,
+        followingCount: 131,
     },
 ];
