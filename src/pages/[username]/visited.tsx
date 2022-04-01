@@ -4,14 +4,16 @@ import {GetStaticPaths, GetStaticProps} from 'next/types';
 import {useRouter} from 'next/router';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import {useTranslation} from 'next-i18next';
+import {MainLayout} from '_layouts/MainLayout';
 import {Text} from '@mantine/core';
 
-const Want: FC = () => {
+const Visited: FC = () => {
     const router = useRouter();
     const {t} = useTranslation('common');
     const {user} = router.query;
+
     return (
-        <>
+        <MainLayout>
             <Text
                 color="dimmed"
                 align="center"
@@ -28,13 +30,13 @@ const Want: FC = () => {
                 sx={{maxWidth: 580, fontSize: 34, fontWeight: 600}}
                 mx="auto"
                 mt="xl">
-                This is a {t('want')} page
+                This is a {t('visited')} page
             </Text>
-        </>
+        </MainLayout>
     );
 };
 
-export default Want;
+export default Visited;
 
 export const getStaticProps: GetStaticProps = async ({locale}) => {
     return {
