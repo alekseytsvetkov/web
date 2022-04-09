@@ -1,12 +1,12 @@
 export const linkRoutes = [
     {
         id: 1,
-        name: 'Want',
+        name: 'want',
         url: '/username/want',
     },
     {
         id: 2,
-        name: 'Visited',
+        name: 'visited',
         url: '/username/visited',
     },
 ];

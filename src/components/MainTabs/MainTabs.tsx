@@ -2,6 +2,7 @@ import {FC} from 'react';
 
 import {useRouter} from 'next/router';
 import Link from 'next/link';
+import {useTranslation} from 'next-i18next';
 import {Container, Group, Text} from '@mantine/core';
 
 import {isActiveRoute} from '_app/utils';
@@ -17,6 +18,7 @@ export const MainTabs: FC<IProps> = ({linkRoutes}) => {
     const {classes, cx} = useStyles();
     const router = useRouter();
     const {pathname} = router;
+    const {t} = useTranslation('common');
 
     return (
         <Group noWrap spacing={1} position="left" className={classes.navigation}>
@@ -30,7 +32,7 @@ export const MainTabs: FC<IProps> = ({linkRoutes}) => {
                                     : cx(classes.navigationItem)
                             }
                             component="a">
-                            {link.name}
+                            {t(link.name)}
                         </Text>
                     </Link>
                 </Container>

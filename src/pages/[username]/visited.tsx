@@ -26,6 +26,7 @@ const Visited: FC = () => {
         <MainLayout>
             <Profile user={user} />
             <MainTabs linkRoutes={linkRoutes} />
+            Hello
         </MainLayout>
     );
 };
