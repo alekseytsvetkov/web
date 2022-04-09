@@ -3,9 +3,11 @@ import {FC} from 'react';
 import {GetStaticPaths, GetStaticProps} from 'next/types';
 import {useRouter} from 'next/router';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
+import {linkRoutes} from '_utils/linkRoutes';
 import {MOCK_USERS} from '_mocks';
 import {MainLayout} from '_layouts/MainLayout';
 import {Profile} from '_components/Profile';
+import {MainTabs} from '_components/MainTabs';
 import {Text} from '@mantine/core';
 
 const Want: FC = () => {
@@ -24,6 +26,8 @@ const Want: FC = () => {
     return (
         <MainLayout>
             <Profile user={user} />
+            <MainTabs linkRoutes={linkRoutes} />
+            Want
         </MainLayout>
     );
 };
