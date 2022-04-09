@@ -3,35 +3,29 @@ import {FC} from 'react';
 import {GetStaticPaths, GetStaticProps} from 'next/types';
 import {useRouter} from 'next/router';
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
-import {useTranslation} from 'next-i18next';
+import {linkRoutes} from '_utils/linkRoutes';
+import {MOCK_USERS} from '_mocks';
 import {MainLayout} from '_layouts/MainLayout';
+import {Profile} from '_components/Profile';
+import {MainTabs} from '_components/MainTabs';
 import {Text} from '@mantine/core';
 
 const Visited: FC = () => {
     const router = useRouter();
-    const {t} = useTranslation('common');
-    const {user} = router.query;
+    const {username} = router.query;
+    const user = MOCK_USERS.find((u) => u.username === username);
 
+    if (!user) {
+        return (
+            <MainLayout>
+                <Text>Тут будет ошибка</Text>
+            </MainLayout>
+        );
+    }
     return (
         <MainLayout>
-            <Text
-                color="dimmed"
-                align="center"
-                size="lg"
-                sx={{maxWidth: 580, fontSize: 34, fontWeight: 600}}
-                mx="auto"
-                mt="xl">
-                {t('welcome')} {user}
-            </Text>
-            <Text
-                color="dimmed"
-                align="center"
-                size="lg"
-                sx={{maxWidth: 580, fontSize: 34, fontWeight: 600}}
-                mx="auto"
-                mt="xl">
-                This is a {t('visited')} page
-            </Text>
+            <Profile user={user} />
+            <MainTabs linkRoutes={linkRoutes} />
         </MainLayout>
     );
 };
