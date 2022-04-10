@@ -12,9 +12,25 @@ module.exports = withBundleAnalyzer({
     async redirects() {
         return [
             {
-                source: '/:path',
-                destination: '/:path/want',
+                source: '/@:username',
+                destination: '/@:username/want',
                 permanent: true,
+            },
+        ];
+    },
+    async rewrites() {
+        return [
+            {
+                source: '/@:username',
+                destination: '/u/:username',
+            },
+            {
+                source: '/@:username/want',
+                destination: '/u/:username/want',
+            },
+            {
+                source: '/@:username/visited',
+                destination: '/u/:username/visited',
             },
         ];
     },
