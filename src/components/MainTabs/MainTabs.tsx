@@ -17,14 +17,14 @@ interface IProps {
 export const MainTabs: FC<IProps> = ({linkRoutes}) => {
     const {classes, cx} = useStyles();
     const router = useRouter();
-    const {pathname} = router;
+    const {pathname, query} = router;
     const {t} = useTranslation('common');
 
     return (
         <Group noWrap spacing={1} position="left" className={classes.navigation}>
             {linkRoutes.map((link) => (
                 <Container key={link.id} px="xs" className={classes.navigationItemContainer}>
-                    <Link href={link.url} passHref>
+                    <Link href={`/@${query.username}${link.url}`} passHref>
                         <Text
                             className={
                                 isActiveRoute(link.name, pathname)
