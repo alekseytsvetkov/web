@@ -31,5 +31,9 @@
     "sign_in_with_google": "Sign in with Google",
     "search_not_found": "Nothing was found for your query",
     "date_of_registration": "Date of registration",
-    "description": "Social network for travel hunters"
+    "description": "Social network for travel hunters",
+    "error_404": "Error 404",
+    "error_404_description": "The page you are looking for does not exist. If the address is correct, please",
+    "error_404_link": "write us on Telegram",
+    "back_to_home": "Back to Home"
 }

@@ -7,8 +7,8 @@ import {linkRoutes} from '_utils/linkRoutes';
 import {MOCK_USERS} from '_mocks';
 import {MainLayout} from '_layouts/MainLayout';
 import {Profile} from '_components/Profile';
+import {NotFound} from '_components/NotFound';
 import {MainTabs} from '_components/MainTabs';
-import {Text} from '@mantine/core';
 
 const Visited: FC = () => {
     const router = useRouter();
@@ -18,10 +18,11 @@ const Visited: FC = () => {
     if (!user) {
         return (
             <MainLayout>
-                <Text>Тут будет ошибка</Text>
+                <NotFound />
             </MainLayout>
         );
     }
+
     return (
         <MainLayout>
             <Profile user={user} />
