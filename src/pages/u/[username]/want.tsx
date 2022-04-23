@@ -27,7 +27,6 @@ const Want: FC = () => {
         <MainLayout>
             <Profile user={user} />
             <MainTabs linkRoutes={linkRoutes} />
-            Want
         </MainLayout>
     );
 };

@@ -49,7 +49,9 @@ export const Profile: FC<IProps> = ({user}) => {
                 )}
                 <Group noWrap spacing={5}>
                     <Calendar color="gray" size={18} />
-                    <Text color="dimmed">{dayjs(createdAt).locale(currentLocale).format('LL')}</Text>
+                    <Text color="dimmed">
+                        {t('date_of_registration')}: {dayjs(createdAt).locale(currentLocale).format('LL')}
+                    </Text>
                 </Group>
             </Group>
             <Group noWrap spacing={5}>
